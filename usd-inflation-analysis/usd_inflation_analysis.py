@@ -49,13 +49,15 @@ plt.legend()
 
 plt.show()
 
----
+print("Columns in df:", df.columns)
+print(df.head())
 
-import matplotlib.pyplot as plt
-
-plt.scatter(df['tufe'], df['usd'])
+plt.figure(figsize=(8,5))
+plt.scatter(df['tufe'], df['usd'], color='blue', alpha=0.7, edgecolors='k')
 plt.xlabel('Inflation (TÜFE)')
 plt.ylabel('USD/TRY')
 plt.title('USD vs Inflation')
-plt.savefig('example_plot.png')
+plt.grid(True)
+
+plt.savefig('example_plot.png', dpi=150)
 plt.show()
