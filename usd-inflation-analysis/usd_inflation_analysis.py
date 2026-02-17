@@ -23,7 +23,7 @@ inf_filtered = inf[(inf['date'] >= start_date) & (inf['date'] <= end_date)]
 
 df = pd.merge(usd_filtered, inf_filtered, on='date', how='inner')
 
-X = sm.add_constant(df['tufe'])  # sabit terim ekle
+X = sm.add_constant(df['tufe'])
 y = df['usd']
 model = sm.OLS(y, X).fit()
 print(model.summary())
@@ -33,8 +33,8 @@ plt.scatter(df['tufe'], df['usd'], color='blue', label='Data')
 coef = np.polyfit(df['tufe'], df['usd'], 1)
 poly1d_fn = np.poly1d(coef)
 plt.plot(df['tufe'], poly1d_fn(df['tufe']), color='red', label='Regression line')
-plt.title("USD vs TÜFE")
-plt.xlabel("TÜFE")
+plt.title("USD vs INFLATION")
+plt.xlabel("INFLATION")
 plt.ylabel("USD (TL)")
 plt.legend()
 plt.show()
@@ -42,9 +42,8 @@ plt.show()
 plt.figure(figsize=(10,5))
 plt.plot(df['date'], df['usd'], label='USD (TL)', color='blue')
 plt.plot(df['date'], df['tufe'], label='TÜFE', color='green')
-plt.title("USD ve TÜFE Zaman Serisi")
-plt.xlabel("Tarih")
-plt.ylabel("Değer")
+plt.title("USD ve INFLATION time series")
+plt.xlabel("DATE")
+plt.ylabel("VALUE")
 plt.legend()
-
 plt.show()
