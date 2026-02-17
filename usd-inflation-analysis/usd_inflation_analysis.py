@@ -34,8 +34,8 @@ plt.scatter(df['tufe'], df['usd'], color='blue', label='Data')
 coef = np.polyfit(df['tufe'], df['usd'], 1)
 poly1d_fn = np.poly1d(coef)
 plt.plot(df['tufe'], poly1d_fn(df['tufe']), color='red', label='Regression line')
-plt.title("USD vs INFLATION")
-plt.xlabel("INFLATION")
+plt.title("USD vs Inflation")
+plt.xlabel("Inflation")
 plt.ylabel("USD (TL)")
 plt.legend()
 plt.show()
@@ -43,7 +43,7 @@ plt.show()
 plt.figure(figsize=(10,5))
 plt.plot(df['date'], df['usd'], label='USD (TL)', color='blue')
 plt.plot(df['date'], df['tufe'], label='TÜFE', color='green')
-plt.title("USD ve INFLATION time series")
+plt.title("USD ve Inflation time series")
 plt.xlabel("DATE")
 plt.ylabel("VALUE")
 plt.legend()
@@ -53,10 +53,11 @@ fig = px.scatter(
     df,
     x="tufe",
     y="usd",
-    title="USD vs Inflation",
+    title="USD vs Inflation (Interactive)",
     labels={"tufe": "Inflation (TÜFE)", "usd": "USD/TRY"},
     trendline="ols"
 )
 
 fig.show()
+
 
