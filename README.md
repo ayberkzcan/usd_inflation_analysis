@@ -24,4 +24,7 @@ This project analyzes the relationship between the Turkish CPI (inflation) and t
 ## Usage
 
 1. Make sure all files are in the same folder.  
-2. Run the script with
+2. Run the script with:
+
+```bash
+python usd_inflation_analysis.py
