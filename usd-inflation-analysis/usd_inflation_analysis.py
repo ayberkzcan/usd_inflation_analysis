@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import statsmodels.api as sm
+import plotly.express as px
 
 usd = pd.read_csv("usd.csv", usecols=["Date","USD_TRY_Buying"])
 inf = pd.read_excel("inflation.xlsx", usecols=["Tarih","tüfe"])
@@ -47,3 +48,15 @@ plt.xlabel("DATE")
 plt.ylabel("VALUE")
 plt.legend()
 plt.show()
+
+fig = px.scatter(
+    df,
+    x="tufe",
+    y="usd",
+    title="USD vs Inflation",
+    labels={"tufe": "Inflation (TÜFE)", "usd": "USD/TRY"},
+    trendline="ols"
+)
+
+fig.show()
+
