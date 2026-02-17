@@ -46,4 +46,16 @@ plt.title("USD ve TÜFE Zaman Serisi")
 plt.xlabel("Tarih")
 plt.ylabel("Değer")
 plt.legend()
+
+plt.show()
+
+---
+
+import matplotlib.pyplot as plt
+
+plt.scatter(df['tufe'], df['usd'])
+plt.xlabel('Inflation (TÜFE)')
+plt.ylabel('USD/TRY')
+plt.title('USD vs Inflation')
+plt.savefig('example_plot.png')
 plt.show()
